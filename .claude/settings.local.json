@@ -7,7 +7,9 @@
       "Bash(pkill:*)",
       "Bash(file:*)",
       "Bash(sips:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "WebFetch(domain:www.praxisweidl.com)",
+      "Bash(cd /Users/luca/GitHub\\\\ Repos/web/homoepathie-academy && npx astro check:*)"
     ]
   }
 }
