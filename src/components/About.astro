@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import christianWeidl from '../assets/christian-weidl-portrait.jpg';
+---
+
+<section id="ueber-uns" class="py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Content -->
+      <div>
+        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Ihr Dozent</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
+          Christian Weidl
+        </h2>
+        <div class="space-y-4 text-gray-600 leading-relaxed">
+          <p>
+            Willst Du lernen, so schnell wie möglich auf das passendste Mittel zu kommen?
+            Willst Du schnell und effektiv in der Tiefe begreifen, was Homöopathie ist und wie sie funktioniert?
+          </p>
+          <p>
+            <strong class="text-gray-900">Dann bist Du hier richtig!</strong> Bei uns geht es darum, die Essenz der
+            Homöopathie und der Gesundheit zu erfassen. Dafür ist kein 4-Jahres-Kurs notwendig – es geht viel schneller.
+          </p>
+          <p>
+            Wir leiten Dich mit viel Erfahrung dazu an, selbstständig so tief zu gehen, wie Du kannst und möchtest.
+            Dein eigener Enthusiasmus kreiert Deine Lerngeschwindigkeit und Dein Lernvolumen.
+          </p>
+        </div>
+        <!-- Experience Badge -->
+        <div class="mt-6 inline-flex items-center gap-3 px-4 py-2 bg-primary-50 rounded-lg">
+          <span class="text-2xl font-bold text-primary-700">14+</span>
+          <span class="text-sm text-primary-600">Jahre Erfahrung in der<br/>Homöopathie-Ausbildung</span>
+        </div>
+      </div>
+
+      <!-- Portrait -->
+      <div class="relative">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+          <Image
+            src={christianWeidl}
+            alt="Christian Weidl - Dozent der Homöopathie Akademie München"
+            width={500}
+            height={600}
+            class="w-full h-auto object-cover"
+          />
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute -top-4 -right-4 w-24 h-24 bg-accent-200 rounded-full opacity-60 blur-xl -z-10"></div>
+        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary-200 rounded-full opacity-60 blur-xl -z-10"></div>
+      </div>
+    </div>
+  </div>
+</section>

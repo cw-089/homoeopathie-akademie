@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/* Stack Sans Text Font */
+@font-face {
+  font-family: 'Stack Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/stack-sans-text-latin-300-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Stack Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/stack-sans-text-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Stack Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/stack-sans-text-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Stack Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/stack-sans-text-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Stack Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/stack-sans-text-latin-700-normal.woff2') format('woff2');
+}
+
+@theme {
+  /* Font Sizes (alle +1px größer) */
+  --text-xs: 0.8125rem;   /* 13px statt 12px */
+  --text-sm: 0.9375rem;   /* 15px statt 14px */
+
+  --color-primary-50: #f2f8f4;
+  --color-primary-100: #e0efe5;
+  --color-primary-200: #c3dfcc;
+  --color-primary-300: #96c7a6;
+  --color-primary-400: #64a87a;
+  --color-primary-500: #3d9960;
+  --color-primary-600: #2d854d;
+  --color-primary-700: #256b3f;
+  --color-primary-800: #1f5534;
+  --color-primary-900: #1a462b;
+
+  --color-accent-50: #fffbeb;
+  --color-accent-100: #fef3c7;
+  --color-accent-200: #fde68a;
+  --color-accent-300: #fcd34d;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+
+  --color-warm-50: #faf5f0;
+  --color-warm-100: #f5ebe0;
+  --color-warm-200: #ede0d4;
+
+  --font-sans: 'Stack Sans', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: 300;
+  font-size: 1.0625rem; /* 17px */
+  letter-spacing: -0.01em;
+  @apply antialiased text-gray-800;
+}
+
+/* Typografie-Hierarchie */
+h1 {
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+h5, h6 {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Navigation, Buttons, Labels */
+nav, button, a[class*="btn"], .font-medium {
+  font-weight: 400;
+}
+
+/* Fett-Markierungen im Text */
+strong, b {
+  font-weight: 500;
+}
