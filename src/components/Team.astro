@@ -1,0 +1,294 @@
+---
+import { Image } from 'astro:assets';
+import christianWeidl from '../assets/christian-weidl-portrait.jpg';
+import christianWeidlQuote from '../assets/christian-weidl-portrait-v2.jpg';
+import sigridLindemann from '../assets/sigrid-lindemann.jpg';
+
+const team = [
+  {
+    name: 'Christian Weidl',
+    role: 'Gründer & Hauptdozent',
+    experience: '14+ Jahre',
+    image: christianWeidl,
+    bio: 'Mit über 14 Jahren Erfahrung in der Homöopathie-Ausbildung hat Christian eine einzigartige Lehrmethode entwickelt: praxisnah, persönlich und effizient. Sein Ziel ist es, Dir die Essenz der Homöopathie zu vermitteln – ohne unnötige Umwege.',
+    specialties: ['Klassische Homöopathie', 'Moderne Ansätze', 'Fallanalyse', 'Praxis-Supervision'],
+    featured: true,
+  },
+  {
+    name: 'Sigrid Lindemann',
+    role: 'Gastdozentin aus Auroville, Indien',
+    experience: '11+ Jahre',
+    image: sigridLindemann,
+    bio: 'Sigrid bringt internationale Perspektiven aus ihrer langjährigen Praxis in Auroville, Indien mit. Ihre besondere Expertise in der Verbindung von östlicher Weisheit und klassischer Homöopathie bereichert unsere Ausbildung um einzigartige Einblicke.',
+    specialties: ['Internationale Homöopathie', 'Chronische Erkrankungen', 'Anamnesetechniken'],
+    featured: false,
+  },
+];
+---
+
+<section id="dozenten" class="py-16 md:py-24 bg-white relative overflow-hidden">
+  <!-- Decorative Background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary-50/20 to-transparent"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+      <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Unser Team</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+        Persönlich. Erfahren. Engagiert.
+      </h2>
+      <p class="text-lg text-gray-600">
+        Bei uns lernst Du nicht von einer anonymen Institution, sondern von erfahrenen
+        Praktikern, die ihre Leidenschaft für die Homöopathie mit Dir teilen.
+      </p>
+    </div>
+
+    <!-- Team Grid -->
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+      {team.map((member) => (
+        <div class={`relative ${member.featured ? '' : ''}`}>
+          <div class={`h-full rounded-2xl overflow-hidden transition-all duration-300 ${
+            member.featured
+              ? 'bg-gradient-to-br from-white to-primary-50/50 border-2 border-primary-200 shadow-xl shadow-primary-900/5'
+              : 'bg-white border border-gray-200 shadow-lg'
+          }`}>
+            <div class="p-6 lg:p-8">
+              <div class="flex flex-col sm:flex-row gap-6">
+                {/* Portrait */}
+                <div class="shrink-0">
+                  {member.image ? (
+                    <div class="relative">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={360}
+                        height={440}
+                        class="w-36 h-44 sm:w-44 sm:h-56 object-cover rounded-xl shadow-lg"
+                      />
+                      {member.experience && (
+                        <div class="absolute bottom-2 left-2 sm:-bottom-3 sm:-right-3 sm:left-auto px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-primary-600 text-white text-[10px] sm:text-xs font-semibold shadow-lg">
+                          {member.experience}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <div class="w-36 h-44 sm:w-44 sm:h-56 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center border-2 border-dashed border-gray-300">
+                      <div class="text-center p-4">
+                        <svg class="w-12 h-12 text-gray-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <span class="text-xs text-gray-500">Bild folgt</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Content */}
+                <div class="flex-1 min-w-0">
+                  <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-1">{member.name}</h3>
+                  <p class={`text-sm font-medium mb-4 ${member.featured ? 'text-primary-600' : 'text-gray-500'}`}>
+                    {member.role}
+                  </p>
+
+                  <p class={`text-gray-600 leading-relaxed mb-5 ${member.placeholder ? 'italic' : ''}`}>
+                    {member.bio}
+                  </p>
+
+                  {/* Specialties */}
+                  {!member.placeholder && (
+                    <div>
+                      <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Schwerpunkte</p>
+                      <div class="flex flex-wrap gap-2">
+                        {member.specialties.map((specialty) => (
+                          <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
+                            member.featured
+                              ? 'bg-primary-100 text-primary-700 border border-primary-200'
+                              : 'bg-gray-100 text-gray-600 border border-gray-200'
+                          }`}>
+                            {specialty}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {member.placeholder && (
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 text-gray-600 text-sm">
+                      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      Details folgen
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Decorative Blur for Featured */}
+          {member.featured && (
+            <>
+              <div class="absolute -top-4 -left-4 w-20 h-20 bg-primary-200 rounded-full opacity-40 blur-2xl -z-10"></div>
+              <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-accent-200 rounded-full opacity-30 blur-2xl -z-10"></div>
+            </>
+          )}
+        </div>
+      ))}
+    </div>
+
+    {/* Unser einzigartiger Ansatz */}
+    <div class="mt-20 pt-16 border-t border-gray-100">
+      {/* Section Header */}
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Was uns unterscheidet</span>
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-4">
+          Unser einzigartiger Ansatz
+        </h3>
+      </div>
+
+      {/* Content Grid: Text + Bento Images */}
+      <div class="grid lg:grid-cols-2 gap-12 items-start mb-12">
+        {/* Text Content */}
+        <div class="space-y-6">
+          <p class="text-gray-600 leading-relaxed">
+            Bei uns steht die <strong class="text-gray-900">Praxis im Vordergrund</strong>. Keine jahrelange Theorie ohne Anwendung – sondern von Anfang an echtes Verstehen durch Übung und Erfahrung.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Während andere Ausbildungen Dich mit Informationen überschütten, fokussieren wir uns auf das <strong class="text-gray-900">Wesentliche</strong>: Die Fähigkeit, das passende Mittel zu finden. Und das in einem Jahr statt in vier.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Unser Geheimnis? <strong class="text-gray-900">Kleine Gruppen, persönliche Betreuung</strong> und ein Dozent, der jeden Tag für Deine Fragen da ist. So entsteht echtes Verständnis – nicht nur Wissen, das nach der Prüfung wieder verschwindet.
+          </p>
+
+          {/* Key Points */}
+          <div class="grid grid-cols-2 gap-4 pt-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <span class="text-sm text-gray-700 font-medium">Praxisnah statt theorielastig</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <span class="text-sm text-gray-700 font-medium">1 Jahr statt 4 Jahre</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <span class="text-sm text-gray-700 font-medium">Kleine, herzliche Gruppen</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <span class="text-sm text-gray-700 font-medium">Tägliche Betreuung</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bento Grid Images */}
+        <div class="grid grid-cols-2 gap-4">
+          {/* Large Image - spans 2 rows */}
+          <div class="row-span-2 relative group">
+            <div class="w-full h-full min-h-[280px] rounded-2xl bg-gradient-to-br from-warm-100 to-warm-200 overflow-hidden border-2 border-dashed border-warm-200 flex items-center justify-center transition-all duration-300 group-hover:border-primary-200">
+              <div class="text-center p-6">
+                <div class="w-14 h-14 rounded-2xl bg-white/60 flex items-center justify-center mx-auto mb-3 shadow-sm">
+                  <svg class="w-7 h-7 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <p class="text-warm-200 font-medium text-sm">Praxis-Ambiente</p>
+                <p class="text-warm-200/70 text-xs mt-1">Bild folgt</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Small Image 1 - Globuli */}
+          <div class="relative group">
+            <div class="w-full h-32 rounded-2xl bg-gradient-to-br from-primary-50 to-primary-100 overflow-hidden border-2 border-dashed border-primary-100 flex items-center justify-center transition-all duration-300 group-hover:border-primary-200">
+              <div class="text-center p-3">
+                <svg class="w-8 h-8 text-primary-300 mx-auto mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+                <p class="text-primary-400 text-xs font-medium">Globuli</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Small Image 2 - Unterricht */}
+          <div class="relative group">
+            <div class="w-full h-32 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden border-2 border-dashed border-gray-200 flex items-center justify-center transition-all duration-300 group-hover:border-gray-300">
+              <div class="text-center p-3">
+                <svg class="w-8 h-8 text-gray-400 mx-auto mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <p class="text-gray-500 text-xs font-medium">Unterricht</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Two more small images in a row */}
+          <div class="relative group">
+            <div class="w-full h-32 rounded-2xl bg-gradient-to-br from-accent-50 to-accent-100 overflow-hidden border-2 border-dashed border-accent-100 flex items-center justify-center transition-all duration-300 group-hover:border-accent-200">
+              <div class="text-center p-3">
+                <svg class="w-8 h-8 text-accent-300 mx-auto mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                <p class="text-accent-400 text-xs font-medium">Fachliteratur</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <div class="w-full h-32 rounded-2xl bg-gradient-to-br from-primary-50 to-warm-100 overflow-hidden border-2 border-dashed border-primary-100 flex items-center justify-center transition-all duration-300 group-hover:border-primary-200">
+              <div class="text-center p-3">
+                <svg class="w-8 h-8 text-primary-300 mx-auto mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+                <p class="text-primary-400 text-xs font-medium">Naturheilkunde</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Quote with Left Border */}
+      <blockquote class="border-l-4 border-primary-600 pl-6 py-4 max-w-3xl mx-auto">
+        <p class="text-lg md:text-xl text-gray-600 italic leading-relaxed mb-4">
+          &bdquo;Unsere Mission ist es, Dir zu zeigen, dass Homöopathie kein Mysterium ist –
+          sondern eine kraftvolle Heilkunst, die jeder erlernen kann, der bereit ist,
+          tiefer zu schauen.&rdquo;
+        </p>
+        <footer class="flex items-center gap-3">
+          <Image
+            src={christianWeidlQuote}
+            alt="Christian Weidl"
+            width={96}
+            height={96}
+            class="w-12 h-12 rounded-full object-cover border-2 border-gray-200"
+          />
+          <div>
+            <p class="font-semibold text-gray-900">Christian Weidl</p>
+            <p class="text-sm text-gray-500">Gründer der Akademie</p>
+          </div>
+        </footer>
+      </blockquote>
+
+      {/* Decorative Green Line */}
+      <div class="mt-12 flex justify-center">
+        <div class="h-1 w-24 bg-gradient-to-r from-transparent via-primary-400 to-transparent rounded-full"></div>
+      </div>
+    </div>
+  </div>
+</section>

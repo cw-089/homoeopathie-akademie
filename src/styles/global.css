@@ -113,3 +113,23 @@ nav, button, a[class*="btn"], .font-medium {
 strong, b {
   font-weight: 500;
 }
+
+/* Gelber Marker-Unterstrich (handgezeichnet, geschwungen) */
+.marker-highlight {
+  position: relative;
+  white-space: nowrap;
+  isolation: isolate;
+}
+
+.marker-highlight::after {
+  content: '';
+  position: absolute;
+  left: -0.05em;
+  right: -0.05em;
+  bottom: 0.05em;
+  height: 0.28em;
+  background: rgba(251, 191, 36, 0.5);
+  border-radius: 40% 60% 50% 45% / 60% 40% 55% 50%;
+  transform: rotate(-0.4deg) scaleY(0.9);
+  z-index: -1;
+}

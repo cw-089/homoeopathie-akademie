@@ -1,16 +1,17 @@
 ---
 import { Image } from 'astro:assets';
-import christianWeidl from '../assets/christian-weidl-portrait.jpg';
+import christianWeidl from '../assets/christian-weidl-outdoor.jpg';
 ---
 
 <section id="ueber-uns" class="py-16 md:py-24 bg-white">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Content Grid -->
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Content -->
       <div>
-        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Ihr Dozent</span>
+        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Unsere Philosophie</span>
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
-          Christian Weidl
+          Homöopathie verstehen – nicht nur auswendig lernen
         </h2>
         <div class="space-y-4 text-gray-600 leading-relaxed">
           <p>
@@ -26,10 +27,20 @@ import christianWeidl from '../assets/christian-weidl-portrait.jpg';
             Dein eigener Enthusiasmus kreiert Deine Lerngeschwindigkeit und Dein Lernvolumen.
           </p>
         </div>
-        <!-- Experience Badge -->
-        <div class="mt-6 inline-flex items-center gap-3 px-4 py-2 bg-primary-50 rounded-lg">
-          <span class="text-2xl font-bold text-primary-700">14+</span>
-          <span class="text-sm text-primary-600">Jahre Erfahrung in der<br/>Homöopathie-Ausbildung</span>
+        <!-- Stats Grid -->
+        <div class="mt-8 grid grid-cols-3 gap-3">
+          <div class="text-center p-3 sm:p-4 rounded-xl bg-primary-50/50 border border-primary-100">
+            <span class="block text-xl sm:text-2xl font-bold text-primary-700">14+</span>
+            <span class="text-[11px] sm:text-xs text-primary-600 leading-tight block">Jahre<br class="sm:hidden" /> Erfahrung</span>
+          </div>
+          <div class="text-center p-3 sm:p-4 rounded-xl bg-primary-50/50 border border-primary-100">
+            <span class="block text-xl sm:text-2xl font-bold text-primary-700">100+</span>
+            <span class="text-[11px] sm:text-xs text-primary-600 leading-tight block">Absolventen</span>
+          </div>
+          <div class="text-center p-3 sm:p-4 rounded-xl bg-primary-50/50 border border-primary-100">
+            <span class="block text-xl sm:text-2xl font-bold text-primary-700">1 Jahr</span>
+            <span class="text-[11px] sm:text-xs text-primary-600 leading-tight block">bis zum<br class="sm:hidden" /> Zertifikat</span>
+          </div>
         </div>
       </div>
 
@@ -39,8 +50,9 @@ import christianWeidl from '../assets/christian-weidl-portrait.jpg';
           <Image
             src={christianWeidl}
             alt="Christian Weidl - Dozent der Homöopathie Akademie München"
-            width={500}
-            height={600}
+            width={893}
+            height={1250}
+            loading="eager"
             class="w-full h-auto object-cover"
           />
         </div>

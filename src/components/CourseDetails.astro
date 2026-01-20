@@ -1,0 +1,418 @@
+---
+const grundausbildung = {
+  title: 'Grundausbildung',
+  description: 'Die 7 Module der einjährigen Grundausbildung',
+  modules: [
+    {
+      number: 1,
+      title: 'Grundlagen nach Hahnemann',
+      subtitle: 'Einfach erklärt',
+      description: 'Die klassische Homöopathie verständlich aufbereitet. Du lernst die Prinzipien, die Hahnemann vor über 200 Jahren entdeckte – und warum sie heute noch genauso wirksam sind.',
+      details: [
+        'Das Organon der Heilkunst (§§ 1-70) als Fundament Deiner Praxis',
+        'Das Ähnlichkeitsprinzip "Similia similibus curentur" praktisch angewendet',
+        'Die Lebenskraft als dynamisches Prinzip verstehen und nutzen',
+      ],
+      topics: ['Organon der Heilkunst', 'Das Ähnlichkeitsprinzip', 'Potenzierung verstehen', 'Miasmentheorie'],
+    },
+    {
+      number: 2,
+      title: 'Praktische Anamnese',
+      subtitle: 'Übungen & Techniken',
+      description: 'Die Anamnese ist das Herzstück jeder homöopathischen Behandlung. Hier lernst Du, wie Du durch gezielte Fragen zum Kern des Problems vordringst.',
+      details: [
+        'Der Spontanbericht: Patienten frei erzählen lassen – keine Information ist banal',
+        'Gelenkter Bericht nach Organon § 86: gezielte Nachfragen zu Ort, Zeit, Modalitäten',
+        'Symptom-Hierarchie erstellen: charakteristische vs. allgemeine Symptome unterscheiden',
+      ],
+      topics: ['Gesprächsführung', 'Symptome gewichten', 'Modalitäten erkennen', 'Dokumentation'],
+    },
+    {
+      number: 3,
+      title: 'Neue Konzepte',
+      subtitle: 'Sankaran, Scholten, Mangialavori',
+      description: 'Die moderne Homöopathie hat sich weiterentwickelt. Lerne die Ansätze von Sankaran (Empfindungsmethode), Scholten (Periodensystem) und Mangialavori.',
+      details: [
+        'Sankaran\'s Empfindungsmethode: Die "Vital Sensation" und die drei Königreiche (Pflanze/Tier/Mineral)',
+        'Scholten\'s Periodensystem: 7 Serien als Lebensphasen, 18 Stadien als Entwicklungsschritte',
+        'Mangialavori\'s Methode der Komplexität: Thematische Mittelfamilien über Königreichsgrenzen hinweg',
+      ],
+      topics: ['Empfindungsmethode', 'Periodensystem-Analyse', 'Thematische Mittelzuordnung', 'Integration der Methoden'],
+    },
+    {
+      number: 4,
+      title: 'Tiefes Mittelverständnis',
+      subtitle: 'Die wichtigsten Arzneien',
+      description: 'Statt oberflächlicher Mittelbilder entwickelst Du ein tiefes Verständnis für die Essenz der wichtigsten homöopathischen Arzneien.',
+      details: [
+        'Über Symptomenlisten hinaus: Die Essenz eines Mittels wirklich erfassen',
+        'Die großen Polychreste (Sulphur, Lycopodium, Pulsatilla, etc.) in der Tiefe verstehen',
+        'Pflanzen-, Tier- und Mineralmittel charakteristisch unterscheiden lernen',
+      ],
+      topics: ['Polychreste verstehen', 'Nosoden', 'Pflanzliche Mittel', 'Mineralische Mittel'],
+    },
+    {
+      number: 5,
+      title: 'Eigenes Forschungsgebiet',
+      subtitle: 'Deine Spezialisierung',
+      description: 'Entwickle Dein eigenes Interessensgebiet innerhalb der Homöopathie. Wir begleiten Dich bei Deiner individuellen Vertiefung.',
+      details: [
+        'Wähle eine Mittelgruppe oder ein Themengebiet, das Dich besonders fasziniert',
+        'Lerne den Umgang mit Materia Medica und Repertorium für eigenständige Recherche',
+        'Dokumentiere Deine Erkenntnisse systematisch und präsentiere sie der Gruppe',
+      ],
+      topics: ['Thema finden', 'Recherche-Methoden', 'Fallsammlung', 'Präsentation'],
+    },
+    {
+      number: 6,
+      title: 'Fallbesprechungen',
+      subtitle: 'Praxis erleben',
+      description: 'Echte Fälle aus der Praxis werden gemeinsam besprochen und analysiert. So lernst Du, Dein Wissen anzuwenden.',
+      details: [
+        'Echte Patientenfälle gemeinsam analysieren und diskutieren',
+        'Repertorisationstechniken: Von der Symptomerhebung zur begründeten Mittelwahl',
+        'Verlaufsbeurteilung nach der Hering\'schen Regel und andere Heilungszeichen erkennen',
+      ],
+      topics: ['Fallanalyse', 'Repertorisation', 'Mittelwahl begründen', 'Verlaufsbeurteilung'],
+    },
+    {
+      number: 7,
+      title: 'Abschluss',
+      subtitle: 'Prüfung oder Abschlussarbeit',
+      description: 'Wähle selbst: Eine 10-seitige wissenschaftliche Arbeit oder eine schriftliche und mündliche Prüfung. Beides führt zum anerkannten Zertifikat.',
+      details: [
+        'Option A: 10-seitige wissenschaftliche Abschlussarbeit zu einem Thema Deiner Wahl',
+        'Option B: Schriftliche und mündliche Prüfung mit praktischer Fallanalyse',
+        'Beide Wege führen zum anerkannten Zertifikat der Homöopathie Akademie München',
+      ],
+      topics: ['Themenwahl', 'Wissenschaftliches Arbeiten', 'Prüfungsvorbereitung', 'Zertifikat'],
+    },
+  ],
+};
+
+const fortbildung = {
+  title: 'Fortbildung',
+  description: 'Die 10 Module für fortgeschrittene Homöopathen',
+  modules: [
+    {
+      number: 1,
+      title: 'Jenseits der Grundlagen',
+      subtitle: 'Vertiefte Theorie',
+      description: 'Erweitere Dein theoretisches Fundament und tauche tiefer in die Materia Medica ein.',
+      details: [
+        'Seltene und weniger bekannte Arzneien systematisch erschließen',
+        'Komplexe Konstitutionstypen erkennen und einordnen',
+        'Differentialdiagnose: Ähnliche Mittel sicher voneinander unterscheiden',
+      ],
+      topics: ['Seltene Arzneien', 'Komplexe Konstitutionen', 'Differentiation ähnlicher Mittel'],
+    },
+    {
+      number: 2,
+      title: 'Komplexe Fälle lösen',
+      subtitle: 'Herausfordernde Patienten',
+      description: 'Wenn die Standardansätze nicht greifen – wie findest Du trotzdem das passende Mittel?',
+      details: [
+        'Mehrschichtige Pathologie verstehen: Wenn mehrere Miasmen sich überlagern',
+        'Unterdrückte Symptome erkennen und behutsam behandeln',
+        'Strategien für hartnäckige chronische Erkrankungen entwickeln',
+      ],
+      topics: ['Mehrschichtige Fälle', 'Unterdrückte Symptome', 'Chronische Erkrankungen'],
+    },
+    {
+      number: 3,
+      title: 'Alte und neue Mittel',
+      subtitle: 'Materia Medica Erweiterung',
+      description: 'Lerne vergessene Arzneien neu kennen und integriere moderne Prüfungen in Dein Repertoire.',
+      details: [
+        'Vergessene Polychreste wiederentdecken und in die Praxis integrieren',
+        'Moderne Arzneimittelprüfungen verstehen und anwenden',
+        'Spezielle Mittelgruppen: Tiermittel, Milch-Reihe, moderne Nosoden',
+      ],
+      topics: ['Vergessene Polychreste', 'Neue Prüfungen', 'Tiermittel', 'Moderne Nosoden'],
+    },
+    {
+      number: 4,
+      title: 'Verschiedene Lösungsstrategien',
+      subtitle: 'Methodenvielfalt',
+      description: 'Nicht jeder Fall lässt sich mit derselben Methode lösen. Entwickle Flexibilität in Deinem Ansatz.',
+      details: [
+        'Klassische und moderne Methoden flexibel kombinieren',
+        'Bewährte Indikationen vs. individuelle Verschreibung abwägen',
+        'Klinische Homöopathie: Wann ist sie sinnvoll, wann nicht?',
+      ],
+      topics: ['Klassisch vs. Modern', 'Bewährte Indikationen', 'Klinische Homöopathie'],
+    },
+    {
+      number: 5,
+      title: 'Hypersensible Patienten',
+      subtitle: 'Besondere Herausforderungen',
+      description: 'Manche Patienten reagieren extrem empfindlich. Wie dosierst Du richtig und vermeidest Erstverschlimmerungen?',
+      details: [
+        'LM/Q-Potenzen meistern: Verdünnung 1:50.000 für sanfte, tiefgreifende Wirkung',
+        'Erstverschlimmerungen vermeiden durch angepasste Dosierung und Gabenwahl',
+        'Split-Dosing und Plus-Methode bei besonders empfindlichen Patienten',
+      ],
+      topics: ['Sanfte Dosierung', 'LM-Potenzen', 'Antidotierung', 'Begleittherapien'],
+    },
+    {
+      number: 6,
+      title: 'Homöopathie und Psychiatrie',
+      subtitle: 'Seelische Leiden',
+      description: 'Die Homöopathie bietet wertvolle Ansätze bei psychischen Beschwerden – ethisch und fachlich fundiert.',
+      details: [
+        'Angststörungen und Depressionen homöopathisch begleiten',
+        'Trauma-Folgen erkennen und behutsam behandeln',
+        'Ethische Grenzen kennen: Wann ist konventionelle Behandlung unerlässlich?',
+      ],
+      topics: ['Angststörungen', 'Depressionen', 'Trauma-Folgen', 'Grenzen erkennen'],
+    },
+    {
+      number: 7,
+      title: 'Dosierung und Potenzen',
+      subtitle: 'Die feine Kunst',
+      description: 'Meistere die Kunst der richtigen Potenzwahl und Dosierung für optimale Behandlungserfolge.',
+      details: [
+        'C-Potenzen (1:100) vs. LM/Q-Potenzen (1:50.000): Wann welche Potenzart?',
+        'Niedrige Potenzen wirken körperlich, hohe auf geistiger Ebene – die Kunst der Wahl',
+        'Wiederholungsstrategien und Plus-Methode für chronische Behandlungen',
+      ],
+      topics: ['C-Potenzen', 'Q-Potenzen', 'Wiederholungsstrategien', 'Plus-Methode'],
+    },
+    {
+      number: 8,
+      title: 'Weiter forschen',
+      subtitle: 'Eigene Erkenntnisse',
+      description: 'Vertiefe Dein Forschungsgebiet aus der Grundausbildung oder erschließe Dir ein neues.',
+      details: [
+        'Das eigene Forschungsgebiet systematisch vertiefen oder erweitern',
+        'Kasuistiken sammeln, auswerten und dokumentieren',
+        'Kollegialer Austausch und Supervision für neue Perspektiven',
+      ],
+      topics: ['Literaturstudium', 'Kasuistiken sammeln', 'Austausch mit Kollegen'],
+    },
+    {
+      number: 9,
+      title: 'Mittelherstellung',
+      subtitle: 'Praxis der Potenzierung',
+      description: 'Lerne, wie Du selbst homöopathische Mittel herstellst und potenzierst.',
+      details: [
+        'Urtinktur-Herstellung aus frischen Pflanzen und anderen Ausgangsstoffen',
+        'Trituration (Verreibung) für unlösliche Substanzen nach HAB',
+        'Succussion (Verschüttelung) und Qualitätskontrolle in der Praxis',
+      ],
+      topics: ['Urtinktur-Herstellung', 'Verreibung', 'Verschüttelung', 'Qualitätskontrolle'],
+    },
+    {
+      number: 10,
+      title: 'Abschluss',
+      subtitle: 'Prüfung oder Abschlussarbeit',
+      description: 'Schließe die Fortbildung mit einer vertieften wissenschaftlichen Arbeit oder Prüfung ab.',
+      details: [
+        'Vertiefte wissenschaftliche Arbeit oder ausführliche Fallstudie',
+        'Kollegiale Prüfung mit konstruktivem Feedback',
+        'Fortgeschrittenen-Zertifikat der Homöopathie Akademie München',
+      ],
+      topics: ['Themenwahl', 'Fallstudie verfassen', 'Prüfungsvorbereitung', 'Fortgeschrittenen-Zertifikat'],
+    },
+  ],
+};
+---
+
+<section id="kursinhalte" class="py-16 md:py-24 bg-white relative overflow-hidden">
+  <!-- Decorative Elements -->
+  <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-200 to-transparent"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+      <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Kursinhalte</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+        Was Du bei uns lernst
+      </h2>
+      <p class="text-lg text-gray-600">
+        Strukturiert, praxisnah und auf Dein Tempo abgestimmt.
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex justify-center mb-10">
+      <div class="inline-flex gap-1 p-1.5 rounded-xl bg-gray-100 shadow-sm border border-gray-200" role="tablist">
+        <button
+          type="button"
+          role="tab"
+          aria-selected="true"
+          data-tab="grundausbildung"
+          class="tab-button px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200 bg-primary-600 text-white shadow-sm"
+        >
+          Grundausbildung
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected="false"
+          data-tab="fortbildung"
+          class="tab-button px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200 text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+        >
+          Fortbildung
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab Panels -->
+    <div class="tab-panels">
+      <!-- Grundausbildung Panel -->
+      <div id="panel-grundausbildung" class="tab-panel" role="tabpanel">
+        <div class="grid gap-4">
+          {grundausbildung.modules.map((module, index) => (
+            <details class="group accordion-item bg-gray-50 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow" data-index={index}>
+              <summary class="flex items-center gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                {/* Module Number */}
+                <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center shrink-0">
+                  <span class="text-lg font-bold text-primary-700">{module.number}</span>
+                </div>
+
+                {/* Title & Subtitle */}
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-semibold text-gray-900">{module.title}</h3>
+                  <p class="text-sm text-gray-500">{module.subtitle}</p>
+                </div>
+
+                {/* Arrow */}
+                <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 group-open:rotate-180 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+
+              <div class="px-5 pb-5 pt-2 border-t border-gray-200">
+                <p class="text-gray-600 mb-4">{module.description}</p>
+
+                {/* Details/Bullet Points */}
+                <ul class="mb-4 space-y-2">
+                  {module.details.map((detail) => (
+                    <li class="flex items-start gap-2 text-sm text-gray-600">
+                      <svg class="w-4 h-4 text-primary-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                      </svg>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="flex flex-wrap gap-2">
+                  {module.topics.map((topic) => (
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700 border border-primary-100">
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <!-- Fortbildung Panel -->
+      <div id="panel-fortbildung" class="tab-panel hidden" role="tabpanel">
+        <div class="grid gap-4">
+          {fortbildung.modules.map((module, index) => (
+            <details class="group accordion-item bg-gray-50 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow" data-index={index}>
+              <summary class="flex items-center gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                {/* Module Number */}
+                <div class="w-12 h-12 rounded-xl bg-gray-200 flex items-center justify-center shrink-0">
+                  <span class="text-lg font-bold text-gray-700">{module.number}</span>
+                </div>
+
+                {/* Title & Subtitle */}
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-semibold text-gray-900">{module.title}</h3>
+                  <p class="text-sm text-gray-500">{module.subtitle}</p>
+                </div>
+
+                {/* Arrow */}
+                <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 group-open:rotate-180 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+
+              <div class="px-5 pb-5 pt-2 border-t border-gray-200">
+                <p class="text-gray-600 mb-4">{module.description}</p>
+
+                {/* Details/Bullet Points */}
+                <ul class="mb-4 space-y-2">
+                  {module.details.map((detail) => (
+                    <li class="flex items-start gap-2 text-sm text-gray-600">
+                      <svg class="w-4 h-4 text-gray-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                      </svg>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="flex flex-wrap gap-2">
+                  {module.topics.map((topic) => (
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 border border-gray-200">
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* CTA */}
+    <div class="mt-12 text-center">
+      <p class="text-gray-600 mb-4">
+        Bereit, Deine Homöopathie-Ausbildung zu starten?
+      </p>
+      <a
+        href="#kontakt"
+        class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-colors shadow-lg shadow-primary-600/25"
+      >
+        Jetzt unverbindlich anfragen
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Tab switching functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetTab = button.getAttribute('data-tab');
+
+        // Update button states
+        tabButtons.forEach(btn => {
+          const isActive = btn.getAttribute('data-tab') === targetTab;
+          btn.setAttribute('aria-selected', isActive.toString());
+          if (isActive) {
+            btn.classList.remove('text-gray-600', 'hover:text-gray-900', 'hover:bg-gray-50');
+            btn.classList.add('bg-primary-600', 'text-white', 'shadow-sm');
+          } else {
+            btn.classList.add('text-gray-600', 'hover:text-gray-900', 'hover:bg-gray-50');
+            btn.classList.remove('bg-primary-600', 'text-white', 'shadow-sm');
+          }
+        });
+
+        // Update panel visibility
+        tabPanels.forEach(panel => {
+          if (panel.id === `panel-${targetTab}`) {
+            panel.classList.remove('hidden');
+          } else {
+            panel.classList.add('hidden');
+          }
+        });
+      });
+    });
+  });
+</script>

@@ -1,0 +1,189 @@
+---
+const courses = [
+  {
+    title: 'Grundausbildung',
+    subtitle: 'Homöopathie von Grund auf verstehen',
+    duration: '1 Jahr',
+    modules: 7,
+    description: 'In einem Jahr lernen, wofür andere 4 Jahre brauchen. Unser praxisorientierter Intensivkurs vermittelt Dir alle Grundlagen, die Du für eine erfolgreiche homöopathische Praxis brauchst.',
+    highlights: [
+      'Klassische Homöopathie nach Hahnemann',
+      'Moderne Konzepte (Sankaran, Scholten)',
+      'Praktische Anamnese-Übungen',
+      'Eigenes Forschungsgebiet entwickeln',
+    ],
+    cta: 'Mehr erfahren',
+    featured: true,
+  },
+  {
+    title: 'Fortbildung',
+    subtitle: 'Für Absolventen & Praktizierende',
+    duration: '1 Jahr',
+    modules: 10,
+    description: 'Vertiefe Dein Wissen und meistere auch komplexe Fälle. Dieser Kurs richtet sich an Absolventen unserer Grundausbildung oder an erfahrene Homöopathen.',
+    highlights: [
+      'Komplexe Fälle lösen',
+      'Hypersensible Patienten behandeln',
+      'Homöopathie & Psychiatrie',
+      'Eigene Mittelherstellung',
+    ],
+    cta: 'Mehr erfahren',
+    featured: false,
+  },
+];
+---
+
+<section id="kurse" class="py-16 md:py-24 bg-gradient-to-b from-white via-primary-50/30 to-white relative overflow-hidden">
+  <!-- Decorative Background Pattern -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0); background-size: 32px 32px;"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+      <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Unsere Kurse</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+        In einem Jahr lernen, wofür andere <span class="text-primary-600">4 Jahre</span> brauchen
+      </h2>
+      <p class="text-lg text-gray-600">
+        Praxisbezogen statt theorielastig. Kleine Gruppen statt Massenabfertigung.
+        Persönlicher Dozent statt anonyme Institution. Interessiert? Entdecke hier die Kursangebote:
+      </p>
+    </div>
+
+    <!-- Course Cards -->
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+      {courses.map((course, index) => (
+        <div class={`relative group ${course.featured ? '' : ''}`}>
+          {/* Card */}
+          <div class={`relative h-full rounded-2xl p-8 lg:p-10 transition-all duration-300 ${
+            course.featured
+              ? 'bg-white border-2 border-primary-200 shadow-xl shadow-primary-900/5 hover:shadow-2xl hover:shadow-primary-900/10 hover:border-primary-300'
+              : 'bg-white border border-gray-200 shadow-lg shadow-gray-900/5 hover:shadow-xl hover:shadow-gray-900/10 hover:border-gray-300'
+          }`}>
+            {/* Featured Badge */}
+            {course.featured && (
+              <div class="absolute -top-3 left-8">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-semibold shadow-lg">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  Beliebtester Kurs
+                </span>
+              </div>
+            )}
+
+            {/* Duration & Modules Badge */}
+            <div class="flex items-center gap-3 mb-6">
+              <span class={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium ${
+                course.featured
+                  ? 'bg-primary-100 text-primary-700'
+                  : 'bg-gray-100 text-gray-700'
+              }`}>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {course.duration}
+              </span>
+              <span class={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium ${
+                course.featured
+                  ? 'bg-primary-100 text-primary-700'
+                  : 'bg-gray-100 text-gray-700'
+              }`}>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+                {course.modules} Module
+              </span>
+            </div>
+
+            {/* Title & Subtitle */}
+            <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">{course.title}</h3>
+            <p class={`text-sm font-medium mb-4 ${course.featured ? 'text-primary-600' : 'text-gray-500'}`}>
+              {course.subtitle}
+            </p>
+
+            {/* Description */}
+            <p class="text-gray-600 leading-relaxed mb-6">
+              {course.description}
+            </p>
+
+            {/* Highlights */}
+            <div class="mb-8">
+              <p class="text-sm font-semibold text-gray-900 mb-3">Schwerpunkte:</p>
+              <ul class="space-y-2">
+                {course.highlights.map((highlight) => (
+                  <li class="flex items-start gap-2.5">
+                    <svg class={`w-5 h-5 mt-0.5 shrink-0 ${course.featured ? 'text-primary-500' : 'text-gray-400'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                    </svg>
+                    <span class="text-gray-600 text-sm">{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* CTA */}
+            <a
+              href="#kursinhalte"
+              class={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
+                course.featured
+                  ? 'bg-primary-600 text-white hover:bg-primary-700 shadow-lg shadow-primary-600/25 hover:shadow-xl hover:shadow-primary-600/30'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              {course.cta}
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+          </div>
+
+          {/* Decorative Blur (only for featured) */}
+          {course.featured && (
+            <>
+              <div class="absolute -top-4 -right-4 w-24 h-24 bg-primary-200 rounded-full opacity-40 blur-2xl -z-10"></div>
+              <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-accent-200 rounded-full opacity-40 blur-2xl -z-10"></div>
+            </>
+          )}
+        </div>
+      ))}
+    </div>
+
+    {/* Differentiators */}
+    <div class="mt-16 grid sm:grid-cols-3 gap-6">
+      <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-900">Intensiv & Effizient</p>
+          <p class="text-sm text-gray-500">1 Jahr statt 4 Jahre</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-900">Kleine Gruppen</p>
+          <p class="text-sm text-gray-500">Persönlich & herzlich</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold text-gray-900">Tägliche Betreuung</p>
+          <p class="text-sm text-gray-500">Fragen sofort beantwortet</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
