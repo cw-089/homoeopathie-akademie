@@ -1,0 +1,6 @@
+# Alle Crawler erlauben (inkl. KI-Crawler)
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://homoeopathie-akademie.com/sitemap.xml

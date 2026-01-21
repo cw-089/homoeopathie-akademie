@@ -14,6 +14,129 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Schema.org structured data
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": "https://homoeopathie-akademie.com/#organization",
+  "name": "Homöopathie Akademie München",
+  "alternateName": "Homöopathie Akademie",
+  "url": "https://homoeopathie-akademie.com",
+  "logo": "https://homoeopathie-akademie.com/favicon.svg",
+  "description": "Homöopathie Akademie München - Effektive Online- und Präsenzkurse für Anfänger und Fortgeschrittene seit 2011.",
+  "foundingDate": "2011",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Grimmstr. 1",
+    "addressLocality": "München",
+    "postalCode": "80336",
+    "addressCountry": "DE"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+49-160-980-528-82",
+    "email": "kontakt@homoeopathie-akademie.com",
+    "contactType": "customer service",
+    "availableLanguage": ["German", "English"]
+  },
+  "sameAs": []
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://homoeopathie-akademie.com/#localbusiness",
+  "name": "Homöopathie Akademie München",
+  "image": "https://homoeopathie-akademie.com/favicon.svg",
+  "url": "https://homoeopathie-akademie.com",
+  "telephone": "+49-160-980-528-82",
+  "email": "kontakt@homoeopathie-akademie.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Grimmstr. 1",
+    "addressLocality": "München",
+    "postalCode": "80336",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.1271,
+    "longitude": 11.5617
+  },
+  "priceRange": "€€"
+};
+
+const coursesSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "Course",
+      "position": 1,
+      "name": "Grundausbildung Homöopathie",
+      "description": "In einem Jahr lernen, wofür andere 4 Jahre brauchen. Unser praxisorientierter Intensivkurs vermittelt alle Grundlagen für eine erfolgreiche homöopathische Praxis.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "@id": "https://homoeopathie-akademie.com/#organization"
+      },
+      "educationalLevel": "Beginner",
+      "timeRequired": "P1Y",
+      "numberOfCredits": "7 Module",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["onsite", "online"],
+        "courseWorkload": "PT4H/Week",
+        "inLanguage": "de"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "4950",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Course",
+      "position": 2,
+      "name": "Fortbildung Homöopathie",
+      "description": "Vertiefe Dein Wissen und meistere auch komplexe Fälle. Für Absolventen der Grundausbildung oder erfahrene Homöopathen.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "@id": "https://homoeopathie-akademie.com/#organization"
+      },
+      "educationalLevel": "Advanced",
+      "timeRequired": "P1Y",
+      "numberOfCredits": "10 Module",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["onsite", "online"],
+        "courseWorkload": "PT4H/Week",
+        "inLanguage": "de"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "4950",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  ]
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://homoeopathie-akademie.com/#website",
+  "url": "https://homoeopathie-akademie.com",
+  "name": "Homöopathie Akademie München",
+  "description": description,
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "@id": "https://homoeopathie-akademie.com/#organization"
+  },
+  "inLanguage": "de-DE"
+};
 ---
 
 <!doctype html>
@@ -47,6 +170,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Fonts (lokal geladen, DSGVO-konform) -->
     <link rel="preload" href="/fonts/stack-sans-text-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/stack-sans-text-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Schema.org Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(coursesSchema)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   </head>
   <body class="min-h-screen flex flex-col bg-white">
     <slot />
