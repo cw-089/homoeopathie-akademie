@@ -1,5 +1,6 @@
 ---
-
+import { Image } from 'astro:assets';
+import anfahrtKarte from '../assets/anfahrt-karte.jpg';
 ---
 
 <section id="kontakt" class="py-16 md:py-24 bg-gray-900 text-white">
@@ -135,12 +136,14 @@
           rel="noopener noreferrer"
           class="block rounded-xl overflow-hidden h-80 md:h-auto md:min-h-[400px] bg-gray-800 group"
         >
-        <img
-          src="/map.jpg"
-          alt="Standort Homöopathie Akademie München - Grimmstraße 1, 80336 München"
-          class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-          loading="lazy"
-        />
+          <Image
+            src={anfahrtKarte}
+            alt="Standort Homöopathie Akademie München - Grimmstraße 1, 80336 München"
+            width={500}
+            height={667}
+            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+            loading="lazy"
+          />
         </a>
       </div>
     </div>
