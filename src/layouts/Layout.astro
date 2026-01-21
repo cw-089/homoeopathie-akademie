@@ -89,12 +89,29 @@ const coursesSchema = {
         "courseWorkload": "PT4H/Week",
         "inLanguage": "de"
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "4950",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock"
-      }
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Einmalzahlung",
+          "price": "4299",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Monatliche Zahlung",
+          "price": "399",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "399",
+            "priceCurrency": "EUR",
+            "unitText": "Monat",
+            "billingDuration": "P12M"
+          },
+          "availability": "https://schema.org/InStock"
+        }
+      ]
     },
     {
       "@type": "Course",
@@ -114,12 +131,29 @@ const coursesSchema = {
         "courseWorkload": "PT4H/Week",
         "inLanguage": "de"
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "4950",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock"
-      }
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Einmalzahlung",
+          "price": "4299",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Monatliche Zahlung",
+          "price": "399",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "399",
+            "priceCurrency": "EUR",
+            "unitText": "Monat",
+            "billingDuration": "P12M"
+          },
+          "availability": "https://schema.org/InStock"
+        }
+      ]
     }
   ]
 };
