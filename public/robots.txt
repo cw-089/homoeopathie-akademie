@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://homoeopathie-akademie.com/sitemap.xml
+Sitemap: https://homoeopathie-akademie.com/sitemap-index.xml
